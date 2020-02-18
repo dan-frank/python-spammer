@@ -2,9 +2,9 @@
 
 ## Overview
 
-This was made by [Engineer Man](https://www.youtube.com/watch?v=UtNYzv8gLbs) and the original can be found on his [GitHub](https://github.com/engineer-man/youtube/tree/master/033).
+Code originally from [Engineer Man](https://www.youtube.com/watch?v=UtNYzv8gLbs) and can be found on his [GitHub](https://github.com/engineer-man/youtube/tree/master/033).
 
-My plan is to tweak it slightly to make harder to find email addresses and more realistic passwords.
+My plan is to tweak it slightly to make more realistic and harder to idenify fake email addresses and passwords.
 
 ## Plan
 
