@@ -6,10 +6,10 @@ import json
 
 random.seed = (os.urandom(1024))
 
-names = json.loads(open('names.json').read())
-lastnames = json.loads(open('lastnames.json').read())
-emaildomains = json.loads(open('emails.json').read())
-nouns = json.loads(open('nouns.json'). read())
+names = json.loads(open('json/names.json').read())
+lastnames = json.loads(open('json/lastnames.json').read())
+emaildomains = json.loads(open('json/emails.json').read())
+nouns = json.loads(open('json/nouns.json'). read())
 
 def getFirstName():
     i = random.randint(0, (len(names) - 1))
