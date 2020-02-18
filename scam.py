@@ -6,11 +6,10 @@ import json
 
 random.seed = (os.urandom(1024))
 
-url = 'http://craigslist.pottsfam.com/index872dijasydu2iuad27aysdu2yytaus6d2ajsdhasdasd2.php'
-
 names = json.loads(open('names.json').read())
 lastnames = json.loads(open('lastnames.json').read())
 emaildomains = json.loads(open('emails.json').read())
+nouns = json.loads(open('nouns.json'). read())
 
 def getFirstName():
     i = random.randint(0, (len(names) - 1))
@@ -32,6 +31,10 @@ def getDigits(amountOf):
         digits = digits + digit
 
     return digits
+
+def getNoun():
+    i = random.randint(0, (len(nouns) - 1))
+    return nouns[i].lower()
 
 def getUsername():
     username = ''
@@ -55,19 +58,41 @@ def getUsername():
     elif i == 7:
         username = getLastName() + "-" + getLastName()
 
+    # add digits to end of username
     digits = random.randint(0, 3)
     username = username + getDigits(digits)
 
     username = username + getEmailDomain()
     return username
 
-def main():
+def getPassword():
+    password = ''
+    option = random.randint(0, 3)
+
     chars = string.ascii_letters + string.digits + '!@#$%^&*()'
-    
+
+    # generates random string 
+    if option == 0:
+        password = ''.join(random.choice(chars) for i in range(14))
+    # generates realistic password from top 100 most common nouns
+    else:
+        amountOf = random.randint(1,3)
+        for i in range(0, amountOf):  
+            password = password + getNoun()
+        password.capitalize()
+
+    # add digits to end of password
+    digits = random.randint(1, 4)
+    password = password + getDigits(digits)
+
+    return password
+
+def main():
+    url = 'http://craigslist.pottsfam.com/index872dijasydu2iuad27aysdu2yytaus6d2ajsdhasdasd2.php'
+
     for name in names:
     	username = getUsername()
-
-    	password = ''.join(random.choice(chars) for i in range(8))
+    	password = getPassword()
 
     	requests.post(url, allow_redirects=False, data={
     		'auid2yjauysd2uasdasdasd': username,
