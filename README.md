@@ -21,7 +21,7 @@ My plan is to tweak it slightly to make harder to find email addresses and more 
     1. [x] Lastname-Firstname
     1. [x] All previous but with digits 
 1. [x] Send multiple email addresses instead of just "@yahoo.com"
-1. [ ] Create realistic passwords
+1. [x] Create realistic passwords
 
 ## Contributers
 
